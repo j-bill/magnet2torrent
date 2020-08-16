@@ -21,4 +21,10 @@ folder: folder in which you want to deposit the finished torrent files. **needs 
 1. Fill textfile with magnet links
 2. Execute Script
 
-*Note: this script will do one magnet link after the other, so older links might take a considerable amount of time until they're done.*
+## Notes
+
+This script will do one magnet link after the other, so older links might take a considerable amount of time until they're done.
+
+This script will remove each magnet link after it finished downloading, while it is downloading you can add new links with echo "magnet=?whatever" >> magnetlinks.txt.
+
+This script will stop as soon as the textfile is empty.
