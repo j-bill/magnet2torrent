@@ -28,7 +28,7 @@ sed -i $'s/magnet/\\\nmagnet/g' $file
 #clean out working directory in case older torrents are stuck here
 mv *.torrent $folder
 
-# function to clean up torrent name - throws error but it works \_(ツ)_/
+# function to clean up torrent name - throws error but it works ¯\_(ツ)_/¯
 function urlDecode() { : "${*//+/ }"; parsedString=$(echo -e "${_//%/\\x}"); }
 
 # if file isn't empty
