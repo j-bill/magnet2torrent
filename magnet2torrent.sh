@@ -1,9 +1,9 @@
 #! /bin/bash
 #
 # ---------------------------------------------------------------------------------
-#	Copyright (c) 2020 j-bill
-#   github.com/j-bill
-#	This file is part of "magnet2torrent" which is released under the MIT license.
+# Copyright (c) 2020 j-bill
+# github.com/j-bill
+# This file is part of "magnet2torrent" which is released under the MIT license.
 # ---------------------------------------------------------------------------------
 
 # file containing all magnet links, doesn't matter if they're all in one line, or each magnet link a line, or empty lines
@@ -19,23 +19,20 @@ sed -i $'s/magnet/\\\nmagnet/g' $file
 mv *.torrent $folder
 
 # function to clean up torrent name - throws error but it works ¯\_(ツ)_/¯
-function urlDecode() { :
-    "${*//+/ }";
-    parsedString=$(echo -e "${_//%/\\x}");
-}
+function urlDecode() { : "${*//+/ }"; parsedString=$(echo -e "${_//%/\\x}"); }
 
 if [ -s $file ]; then
 	while [ -s $file ] ; do
 		line=$(head -n 1 $file)
-        cutURI=$(echo $line | cut -d "=" -f 3 | cut -d "&" -f 1 )
-        urlDecode $cutURI
+        	cutURI=$(echo $line | cut -d "=" -f 3 | cut -d "&" -f 1 )
+        	urlDecode $cutURI
 		aria2c --bt-metadata-only=true --bt-save-metadata=true --listen-port=6881 $line
-        if [ -z $parsedString ]; then
-            find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder \;
-        else
-            find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder/"$parsedString.torrent" \;
-        fi
-		sed -i '1d' $file
+        	if [ -z $parsedString ]; then
+            		find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder \;
+        	else
+            		find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder/"$parsedString.torrent" \;
+        	fi
+	    	sed -i '1d' $file
 	done
 else 
 	echo "$file has no content"
