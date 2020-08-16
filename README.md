@@ -7,3 +7,5 @@ If the magnet link contains a url encoded name it will be decoded and attached t
 Requires aria2 - install with sudo apt install aria2
 
 *Edit the file and folder variables in the shell script to change the magnet link containing file and target folder.*
+
+*Note: this script will do one magnet link after the other, so older links might take a considerable amount of time until they're done.*
