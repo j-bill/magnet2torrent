@@ -25,7 +25,7 @@ errorLocation: error log location (for downloads that timed out)
 
 ## Notes
 
-This script will do one magnet link after the other, so older links might take a considerable amount of time until they're done.
+This script will do one magnet link after the other, so older links  ~~might take aconsiderable amount of time until they're done~~ will timeout, they'll be written into the error log.
 
 This script will remove each magnet link after it finished downloading, while it is downloading you can add new links with echo "magnet=?whatever" >> magnetlinks.txt.
 
