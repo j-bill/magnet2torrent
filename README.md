@@ -6,4 +6,4 @@ If the magnet link contains a url encoded name it will be decoded and attached t
 
 Requires aria2 - install with sudo apt install aria2
 
-## edit the file and folder variables in the shell script to change the text file name and target folder.
+*Edit the file and folder variables in the shell script to change the magnet link containing file and target folder.*
