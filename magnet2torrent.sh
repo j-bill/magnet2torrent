@@ -59,7 +59,7 @@ if [ -s $file ]; then
                 echo $line >> $errorLocation
             else
                 # check if there is a parsedString, use it to rename the torrentfile, else just move the file as is to the target location
-                if [ ! -z $parsedString ]; then
+                if [[ ! -z $parsedString ]] ; then
                     find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder/"$parsedString.torrent" \;
                 else
                     find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder \;
