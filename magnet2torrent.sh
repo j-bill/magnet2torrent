@@ -28,7 +28,7 @@ sed -i $'s/magnet/\\\nmagnet/g' $file
 #clean out working directory in case older torrents are stuck here
 mv *.torrent $folder
 
-# function to clean up torrent name - throws error but it works ¯\_(ツ)_/¯
+# function to clean up torrent name - throws error but it works Â¯\_(ãƒ„)_/Â¯
 function urlDecode() { : "${*//+/ }"; parsedString=$(echo -e "${_//%/\\x}"); }
 
 # if file isn't empty
@@ -55,11 +55,11 @@ if [ -s $file ]; then
             check=`find . -maxdepth 1 -type f -name \*.torrent | wc -l`
 
             # if nothing was downloaded save the failed magnet link in extra text file
-            if [ $check -eq 0 ] ; then
+            if [[ $check -eq 0 ]] ; then
                 echo $line >> $errorLocation
             else
                 # check if there is a parsedString, use it to rename the torrentfile, else just move the file as is to the target location
-                if [[ ! -z $parsedString ]] ; then
+                if [ ! -z $parsedString ]; then
                     find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder/"$parsedString.torrent" \;
                 else
                     find . -maxdepth 1 -type f -name \*.torrent -exec mv {} $folder \;
