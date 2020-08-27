@@ -13,9 +13,9 @@ aria2 - Install with sudo apt install aria2
 # Configuration
 
 Edit the config part of the script.
-file: location/name of the text file containing your magnet links.
-folder: folder in which we want our torrents to end up (e.g. watching folder to automatically add torrents to client)
-timeout: time until it stops trying to grab a magnet link.
+file: location/name of the text file containing your magnet links.  
+folder: folder in which we want our torrents to end up (e.g. watching folder to automatically add torrents to client)  
+timeout: time until it stops trying to grab a magnet link.  
 errorLocation: error log location (for downloads that timed out)
 
 # Usage
